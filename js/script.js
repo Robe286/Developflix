@@ -4,23 +4,30 @@ import peliculas from './peliculas.js'
 
 // - Capturar los div de cada género:
 
-const generoAccion = document.getElementById('genero-28');
-const generoThriller = document.getElementById('genero-53');
-const generoAventura = document.getElementById('genero-12');
-
+const Accion = document.getElementById('genero-28');
+const Thriller = document.getElementById('genero-53');
+const Aventura = document.getElementById('genero-12');
 
 //Crear nodos para título película y imagen:
 
 //Crear nodos img y h3
-const elementImagen = document.createElement('img');
-const tituloPelicula = document.createElement('h3');
-console.log(tituloPelicula);
+const Imagen = document.createElement('img');
+const titulo = document.createElement('h3');
 
 //Agregar los elemento creados a los section:
-generoAccion.appendChild(elementImagen);
-generoThriller.appendChild(elementImagen);
+Accion.appendChild(Imagen);
+Thriller.appendChild(Imagen);
+Aventura.appendChild(Imagen);
+                                
+console.log(Accion);
+console.log(Thriller);
+console.log(Aventura); //Solo me aparece en aventura
+//variables array para cada genero:
 
-console.log(generoAccion);
+const pelisAccion = peliculas.filter((pelicula) => pelicula.genre_ids.includes(28));
+const pelisThriller = peliculas.filter((pelicula) => pelicula.genre_ids.includes(53));
+const pelisAventura = peliculas.filter((pelicula) => pelicula.genre_ids.includes(12));
+
+//metiendo el filter en una funcion, cada duncion le pasamos el genero id, al invocar en el parametro pone 28, 53 y 12
 
 
-//const Accion = peliculas.filter((pelicula) => pelicula.genre_ids.includes(28));
